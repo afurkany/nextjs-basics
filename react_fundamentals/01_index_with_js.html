@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript">
+        // Select the div element with "app" id
+        const app = document.getElementById('app');
+
+        // Create a new H1 element
+        const header = document.createElement('h1');
+
+        // Create a new text node for the H1 element
+        const text = 'Develop. Preview. Ship.';
+        const headerContent = document.createTextNode(text);
+
+        // Append the text to the H1 element
+        header.appendChild(headerContent);
+
+        // Place the H1 element inside the div
+        app.appendChild(header);
+    </script>
+  </body>
+</html>
+
+<!--
+Imperative vs. declarative programming:
+
+The code above is a good example of imperative programming. You're writing the steps for how the user interface should be updated. But when it comes to building user interfaces, a declarative approach is often preferred because it can speed up the development process. Instead of having to write DOM methods, it would be helpful if developers were able to declare what they want to show (in this case, an h1 tag with some text).
+
+In other words, imperative programming is like giving a chef step-by-step instructions on how to make a pizza. Declarative programming is like ordering a pizza without being concerned about the steps it takes to make the pizza. 🍕
+
+React
+is a popular declarative library that you can use build user interfaces.
+-->

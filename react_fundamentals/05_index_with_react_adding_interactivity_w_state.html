@@ -1,0 +1,58 @@
+<html>
+  <body>
+    <div id="app"></div>
+    
+    <!-- To use React in your newly created project, load two React scripts from an external website called unpkg.com -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const app = document.getElementById('app');
+
+      function Header({ title }) {
+        return (<h1>{title}</h1>)
+      }
+
+      // Let's add another component
+      function HomePage() {
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+        // The second item in the array is a function to update the value. You can name the update function anything, 
+        // but it's common to prefix it with set followed by the name of the state variable you're updating:
+        const [likes, setLikes] = React.useState(0);
+
+        function handleClick() {
+          setLikes(likes + 1);
+        }
+
+        return (
+          <div>
+            <Header title="Develop. Preview. Ship." />
+            <ul>
+              {names.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+            <button onClick={handleClick}>Like({likes})</button>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);  // to target a specific dom element and create a root to display your react components in.
+      root.render(<HomePage />);  // to render your react code to the dom
+    </script>
+  </body>
+</html>
+
+
+<!--
+In React, event names are camelCased. The onClick event is one of many possible events you can use to respond to user interaction.
+For example, you can use onChange for input fields or onSubmit for forms.
+
+You can use state to store and increment the number of times a user has clicked the "Like" button. In fact, the React hook used to manage state is called: useState()
+
+Add useState() to your project. It returns an array, and you can access and use those array values inside your component using array destructuring:
+-->

@@ -1,0 +1,35 @@
+<html>
+  <body>
+    <div id="app"></div>
+    
+    <!-- To use React in your newly created project, load two React scripts from an external website called unpkg.com -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const app = document.getElementById('app');
+
+      function Header({ title }) {
+        console.log({ title });
+        console.log(title);
+        return (<h1>{title}</h1>)
+      }
+
+      // Let's add another component
+      function HomePage() {
+        return (
+          <div>
+            {/* Nesting the Header component */}
+            <Header title="React" />
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);  // to target a specific dom element and create a root to display your react components in.
+      root.render(<HomePage />);  // to render your react code to the dom
+    </script>
+  </body>
+</html>

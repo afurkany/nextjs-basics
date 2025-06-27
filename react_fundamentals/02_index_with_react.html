@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <div id="app"></div>
+    
+    <!-- To use React in your newly created project, load two React scripts from an external website called unpkg.com -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+      const app = document.getElementById('app');
+
+      // A component is a function that returns UI elements. Inside the return statement of the function, you can write JSX:
+      // React components should be capitalized to distinguish them from plain HTML and JavaScript:
+      function Header() {
+        return (<h1>Develop. Preview. Ship.</h1>)
+      }
+
+      const root = ReactDOM.createRoot(app);  // to target a specific dom element and create a root to display your react components in.
+
+      // Use React components the same way you'd use regular HTML tags, with angle brackets <>
+      root.render(<Header />);  // to render your react code to the dom
+    </script>
+  </body>
+</html>
+
+
+<!-- 
+  Using `<h1></h1>` is not valid in javascript. This piece of code is JSX. Since browsers do not understand JSX directly, we need to use Babel to transform it to regular JS.
+-->
